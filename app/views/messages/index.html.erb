@@ -19,7 +19,7 @@
       <span class="label label-primary"><%= message.age %>歳</span>
       <span class="label label-success"><%= message.name %></span>
       <%= message.body %>
-      [ <%= link_to "編集" , edit_message_path(message) %> / <%= link_to "削除" , message , method: :delete, data: { confirm: '削除してもよろしいですか？２' } %> ]
+      [ <%= link_to "編集" , edit_message_path(message) %> / <%= link_to "削除" , message , method: :delete, data: { confirm: '削除してもよろしいですか？' } %> ]
       <br>
       <% end %>
   </div>
