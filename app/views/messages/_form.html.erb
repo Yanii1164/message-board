@@ -12,10 +12,26 @@
     </div>
   <% end %>
 
-  名前:
-  <%= f.text_field :name %>
-
-  内容:
-  <%= f.text_field :body %>
-  <%= f.submit class: "btn btn-sm btn-primary" %>
+  <div class="panel panel-danger">
+   <div class="panel-heading">
+    ＊メッセージの編集
+   </div>
+  
+    <br>  
+    <p>&nbsp;<u>名前（ReName）</u></p>
+    &nbsp;<%= f.text_field :name %>
+    <br><br>
+  
+    <p>&nbsp;<u>年齢（ReAge）</u></p>
+    &nbsp;<%= f.text_field :age %>
+    <br><br>
+  
+    <p>&nbsp;<u>内容（ReContents）＜フォーム拡張可能＞</u></p>
+    &nbsp;<%= f.text_area :body, cols: 100 %>
+  
+    <br>
+    &nbsp;<%= f.submit class: "btn btn-sm btn-warning" %>
+    <br><br>
+    
+  </div>
 <% end %>

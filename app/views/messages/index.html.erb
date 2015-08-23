@@ -16,10 +16,10 @@
   
   <div class="panel-body">
       <% @messages.each do |message| %>
-      <span class="label label-info"><%= message.name %></span>
+      <span class="label label-primary"><%= message.age %>歳</span>
+      <span class="label label-success"><%= message.name %></span>
       <%= message.body %>
-      (<%= link_to "edit" , edit_message_path(message) %>
-       <%= link_to "destroy" , message , method: :delete, data: { confirm: '削除してもよろしいですか？２' } %> )
+      [ <%= link_to "編集" , edit_message_path(message) %> / <%= link_to "削除" , message , method: :delete, data: { confirm: '削除してもよろしいですか？２' } %> ]
       <br>
       <% end %>
   </div>
@@ -42,17 +42,21 @@
     </div>
   <% end %>
 
-  <div class="panel panel-default">
+  <div class="panel panel-primary">
    <div class="panel-heading">
-    ＊メッセージ入力
+    メッセージ入力（＊必須）
    </div>
   
     <br>  
-    <p>&nbsp;<u>名前</u></p>
+    <p>&nbsp;<u>*名前（Name）</u></p>
     &nbsp;<%= f.text_field :name %>
     <br><br>
   
-    <p>&nbsp;<u>内容 ＜フォーム拡張可能＞</u></p>
+    <p>&nbsp;<u>*年齢（Age）半角入力 </u></p>
+    &nbsp;<%= f.text_field :age %>
+    <br><br>
+  
+    <p>&nbsp;<u>*内容（Contents）＜フォーム拡張可能＞</u></p>
     &nbsp;<%= f.text_area :body, cols: 100 %>
   
     <br>
